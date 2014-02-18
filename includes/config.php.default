@@ -1,0 +1,35 @@
+<?php
+
+define(VERSION, '0.2&beta;');
+
+$config = array();
+
+/* Database Settings */
+$config[database][server] = 'localhost';                  // Database Server: Usually localhost
+$config[database][port] = '3306';                       // port: mysql uses 3306
+$config[database][prefix] = 'fs_';                       // Prefix: For running multiple instances
+$config[database][db] = 'okitrader';                // Database Name: needs to be created first
+$config[database][dbuser] = 'okitrader';                // Database User
+$config[database][dbpass] = '';                   // Database Password
+
+/* Site Settings */
+$config[site][debug] = 1;        // Set Debug Mode
+$config[site][name] = 'Okinawa Trading Post';    // Public Name
+$config[site][name_enc] = 'Okinawa%20Trading%20Post';    // Public Name html encoded
+$config[site][short_name] = 'Oki Trader';              // Site Short Name
+$config[site][short_name_enc] = 'Oki%20Trader';         // Site short name html encoded
+$config[site][tagline] = 'Swapit for Free';    // Tagline
+$config[site][url] = 'http://www.okitrader.com';  // Withouth final slash
+$config[site][homedir] = '/home/okitrader/public_html'; // Without final slash
+$config[site][contact] = 'admin@okitrader.com';   // Admin Email Address
+$config[site][noreply] = 'noreply@okitrader.com';  // No Reply Address
+$config[site][template] = 'trader';      // Site Template
+$config[site][logo] = $config[site][template] . '/images/logo.jpg';    // Site Logo
+$config[site][lang] = 'en';
+$config[site][encoding] = 'UTF-8';
+$config[site][livedate] = "April 1, 2014";
+
+/* Do not change below here */
+
+$config[settings][imagedir] = 'images/';
+?>

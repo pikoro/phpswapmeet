@@ -1,0 +1,53 @@
+# PHP FreeSwap Changelog
+# Author: Aaron Anderson <admin@okinawaswap.com>
+# Project Start Date:  December 23, 2008
+
+Dec 23, 2008
+	v.0.1 - Created Site structure
+			Added basic config file and skeleton classes
+Jan 05, 2009
+	v.0.2 - Added Template
+			Added code for the following uses:
+				user login
+				user management (admin)
+				user desktop profile
+				user registration
+				email confirmation
+				user logout
+				admin interface
+				faq
+				category selection
+				highlighting selected menu button
+Jan 15, 2009
+    v.0.3 - Added Personal List item adder
+    	   	  Added Picture Upload option
+    	   	  Added Privacy Policy
+    	   	  Added Terms of Use
+    	   	  Added Birthdate to signup form
+    	   	  Added Category Browser
+
+//-------------------------------------------------//
+//                     TO DO                       //
+//-------------------------------------------------//
+
+Lost password email
+Add items to personal list - DONE
+Search Engine
+Sidebar Stats
+Feedback System
+RSS Generator
+Contact Form
+About Us Form
+Privacy Policy	 - DONE
+Site Map
+How it works page
+Terms of Use	 - DONE
+Access Level System
+Swap Mail Generation
+Inbox / PM system
+Secondary Email Notifications
+Swap Finder System
+Add Birthdate to Signup Form	  - DONE
+Category Browser System - DONE
+Delete user
+Suspend User
