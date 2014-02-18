@@ -12,6 +12,6 @@
 
 <p>However, with swapping, comes problems.  We all know that some people can "bend the truth" a bit, so in order to keep people honest, we have had to implement a feedback system, similar to how some big online auction sites do.  If the item is as described, reward the person you got it from with some positive feedback.  If someone keeps trading broken junk that is not described as such, give them neutral or negative feedback.</p>
 
-<p>Anywyas, I hope you enjoy the site and find it useful.  As always, we are open to suggestions and improvements.  Simply hit the <a href="?p=contact">Contact</a> page for the appropriate addresses.</p>
+<p>Anyways, I hope you enjoy the site and find it useful.  As always, we are open to suggestions and improvements.  Simply hit the <a href="?p=contact">Contact</a> page for the appropriate addresses.</p>
 
 <p>Happy Swapping!</p>

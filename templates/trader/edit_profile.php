@@ -1,4 +1,4 @@
-<?php
+<?
 
 if ($_POST[id]) {
     $users->update_profile();
@@ -25,4 +25,3 @@ if ($_POST[id]) {
 				</table>
 		</form>';
 }
-?>

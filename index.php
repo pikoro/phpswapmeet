@@ -56,7 +56,7 @@ $log = new logger();
         -->
         <link rel='stylesheet' media='screen and (min-width: 1081px)' href='templates/<?= $config[site][template] ?>/screen.css' />
         <link rel='stylesheet' media='screen and (min-width: 300px) and (max-width: 1080px)' href='templates/<?= $config[site][template] ?>/handheld.css' />
-        
+
         <title><?= $config[site][name] ?></title>
         <?php
         if (filter_input(INPUT_GET, 'cat', FILTER_VALIDATE_INT)) {
@@ -71,20 +71,22 @@ $log = new logger();
 
     <body>
         <div id="construction" 
-        <? if ($config[site][debug] == 1) {
+        <?
+        if ($config[site][debug] == 1) {
             echo 'style="display:block"';
-        } ?>
+        }
+        ?>
              >Thank you for expressing your interest in <?= $config[site][name] ?>.  This site is still in beta.  We expect the site to be live on <?= $config[site][livedate] ?>.<br/>
             For Information about this site, send an email to <a href="mailto:<?= $config[site][contact] ?>?subject=Question%20about%20<?= $config[site][short_name_enc] ?>"><?= $config[site][contact] ?></a> Current Timeout in Seconds: <?= $currentTimeoutInSecs; ?></div>
             <? include('templates/' . $config[site][template] . '/header.php'); ?>
         <!-- Begin Content -->
         <div id="content">
             <?
-            if (filter_input(INPUT_GET,'p')) {
-                if (!is_file('templates/' . $config[site][template] . '/' . filter_input(INPUT_GET,'p') . '.php')) {
-                    echo '<h2>We\'re Sorry, the page you are trying to access does not exist.</h2></div>';
+            if (filter_input(INPUT_GET, 'p')) {
+                if (!is_file('templates/' . $config[site][template] . '/' . filter_input(INPUT_GET, 'p') . '.php')) {
+                    echo '<h2>We\'re Sorry, the page you are trying to access does not exist.</h2>';
                 } else {
-                    include('templates/' . $config[site][template] . '/' . filter_input(INPUT_GET,'p') . '.php');
+                    include('templates/' . $config[site][template] . '/' . filter_input(INPUT_GET, 'p') . '.php');
                 }
             } else {
                 include('templates/' . $config[site][template] . '/main.php');

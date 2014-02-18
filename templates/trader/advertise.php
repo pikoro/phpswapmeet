@@ -5,7 +5,7 @@
 </style>
     <h1>Advertising on <?= $config[site][name] ?></h1>
 
-Looking to advertise on this site?  The folowing are a list of rates and sizes to get you started:<br>
+Looking to advertise on this site?  The following are a list of rates and sizes to get you started:<br>
 
 <table width="100%">
     <tr><th>Location</th>     <th>Size</th>     <th>Monthly</th>    <th>3 Months</th>   <th>6 Months</th>   <th>1 Year</th></tr>
@@ -18,5 +18,5 @@ Looking to advertise on this site?  The folowing are a list of rates and sizes t
 
 We can also work on special rates for Not for profit organizations, schools, and public service announcements.<br>
 <br>
-Send an email to <a href="mailto:ads@okitrader.com?subject=Advertising Information">ads@okitrader.com</a> for more information.<br>
+Send an email to <a href="mailto:<?=$config[site][advert]?>?subject=Advertising Information"><?=$config[site][advert]?></a> for more information.<br>
 
