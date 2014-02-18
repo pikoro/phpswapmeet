@@ -1,0 +1,647 @@
+/*
+
+Theme Name: WP Pro Real Estate
+Theme URI: http://themeforest.net/user/contempoinc
+Description: This is a clean and simple theme design suitable for use in the real estate market, and more.
+Version: 1.2
+Author: Chris Robinson
+Author URI: http://themeforest.net/user/contempoinc
+Tags: blue, grey, custom, fixed width, two columns, real estate
+
+	This theme was designed and built by Chris Robinson,
+	whose ThemeForest profile you will find at http://themeforest.net/user/contempoinc
+
+	If you should have any questions at all please don't hesitate to
+	email me through my profile on ThemeForest or via email at chris@contempographicdesign.com
+
+*/
+
+/** CSS - Real Estate Theme
+==============================================================================*/
+
+* { /* removes defaults from all elements */
+margin: 0;
+padding: 0;
+list-style-type: none;
+}
+
+/** Body
+==============================================================================*/
+
+body {
+font-family: Arial, Helvetica, sans-serif;
+font-size: 14px;
+line-height: 24px;
+color: #777777;
+background-color: #ffffff;
+margin: 0 auto;
+}
+
+/** Misc
+==============================================================================*/
+
+.clear {
+clear: both;
+}
+
+a img {
+border: none;
+}
+
+p {
+margin: 0 0 20px 0;
+}
+
+.left {
+float: left;
+}
+
+.right {
+float: right;
+}
+
+/** Headings
+==============================================================================*/
+
+h1 {
+font-size: 28px;
+line-height: 30px;
+color: #ffffff;
+margin: 0 0 30px 0;
+}
+
+h2 {
+font-size: 14px;
+line-height: 14px;
+margin-bottom: 8px;
+color: #4f4840;
+text-transform: uppercase;
+border-bottom: 1px solid #4f4840;
+}
+
+h3 {
+font-size: 18px;
+line-height: 20px;
+color: #852432;
+}
+
+h4 {
+font-size: 16px;
+margin: 20px 0 0 0;
+color: #696969;
+text-transform: capitalize;
+}
+
+h4#comments, #respond h4 {
+margin-bottom: 20px;
+border-bottom: 1px solid #eeeeee;
+}
+
+h5 {
+font-size: 14px;
+padding: 0 0 3px 0;
+margin: 20px 0 0 0;
+color: #999999;
+text-transform: capitalize;
+border-bottom: 1px solid #efefef;
+}
+
+/** Links
+==============================================================================*/
+
+a:link {
+color: #4f4840;
+text-decoration: none;
+}
+
+a:visited {
+color: #4f4840;
+text-decoration: none;
+}
+
+a:hover {
+color: #7f7467;
+text-decoration: none;
+}
+
+a:active {
+color: #4f4840;
+text-decoration: none;
+}
+
+/** Main Container
+==============================================================================*/
+
+#container {
+width: 965px;
+margin: 0 auto;
+}
+
+/** Logo
+==============================================================================*/
+
+#logo {
+float: left;
+margin: 10px 0 0 0;
+}
+
+/** Navigation
+==============================================================================*/
+
+ul#nav {
+float: right;
+margin: 40px 0 0 0;
+}
+
+ul#nav li {
+float: left;
+margin: 0 10px 0 0;
+}
+
+ul#nav li a {
+color: #852432;
+display: block;
+}
+
+ul#nav li a:hover {
+color: #7f7467;
+}
+
+ul#nav li.current_page_item a, ul#nav li.current-cat a {
+color: #ffffff;
+padding: 0 8px 0 8px;
+background-color: #852432;
+}
+
+ul#nav ul.children {
+display: none;
+}
+
+/** Search
+==============================================================================*/
+
+#search {
+float: left;
+width: 920px;
+margin: 20px 0 1px 0;
+padding: 10px 20px 10px 20px;
+background: url(images/search_bg.jpg) repeat-x #fff0e0 bottom;
+font-size: 12px;
+color: #852432;
+border-top: 1px solid #fef6ee;
+border-bottom: 1px solid #ebd0b4;
+}
+
+#search p {
+margin: 0;
+}
+
+#searchfield input {
+width: 285px;
+height: 18px;
+padding: 2px 0 0 25px;
+margin: 2px 0 0 0;
+border: 1px solid #ebd0b4;
+background: url(images/search_icon.jpg) no-repeat #ffffff 3px 3px;
+}
+
+/** Home Header
+==============================================================================*/
+
+#homeheader {
+float: left;
+width: 960px;
+color: #999999;
+margin: 0 0 20px 0;
+}
+
+#homeheader img {
+float: left;
+}
+
+#homeintro {
+float: right;
+width: 290px;
+height: 276px;
+padding: 19px;
+border-right: 1px solid #3c69ac;
+border-left: 1px solid #4e79bb;
+background: url(images/header_intro_bg.jpg) repeat-x #3c69ac bottom;
+}
+
+#homeintro h1 {
+margin: 30px 0 20px 0;
+}
+
+#homeintro a#btnleft, #homeintro a#btnright {
+float: left;
+display: block;
+width: 145px;
+height: 27px;
+text-align: center;
+padding: 3px 0 0 0;
+margin: 30px 0 0 0;
+}
+
+#homeintro a#btnleft {
+background: url(images/btn_left_bg.jpg) no-repeat;
+}
+
+#homeintro a#btnright {
+background: url(images/btn_right_bg.jpg) no-repeat;
+}
+
+/** Home Welcome, New Listings, Featured Listing
+==============================================================================*/
+
+#homewelcome, #newlistings {
+float: left;
+display: inline; /*ie6 double margin bug fix*/
+width: 295px;
+margin: 0 20px 0 0;
+}
+
+#homewelcome h1 {
+margin: 0 0 10px 0;
+}
+
+.listing {
+float: left;
+width: 295px;
+margin: 0 0 10px 0;
+}
+
+.listing img {
+float: left;
+padding: 2px;
+margin: 0 10px 0 0;
+border: 1px solid #d8d6d4;
+}
+
+.listing h3 {
+float: right;
+width: 165px;
+font-size: 14px;
+margin-bottom: -8px;
+}
+
+.location, .propertytype {
+font-size: 10px;
+margin: 0;
+color: #aaaaaa;
+}
+
+.price, .bedbathsqft {
+font-size: 12px;
+margin: 0;
+color: #777777;
+}
+
+.price {
+font-weight: bold;
+margin-bottom: -5px;
+}
+
+.price span {
+font-weight: normal;
+font-size: 12px;
+}
+
+#featuredlisting {
+float: left;
+width: 330px;
+}
+
+#featuredwrap {
+float: left;
+width: 328px;
+border: 1px solid #cccccc;
+}
+
+#featuredlisting img {
+float: left;
+}
+
+#featuredlisting h3 {
+margin: 0 0 -8px 0;
+}
+
+.address {
+float: left;
+padding: 10px 20px 8px 20px;
+background-color: #f7e0c8;
+border-bottom: 1px solid #ebd0b4;
+margin: 0 0 10px 0;
+}
+
+#featuredlisting .address {
+width: 288px;
+}
+
+#featuredlisting .price, #featuredlisting .bedbathsqft, #featuredlisting .propertytype,
+.listinginfo .price, .listinginfo .bedbathsqft, .listinginfo .propertytype, .listinginfo .mls {
+margin: 0 0 0 20px;
+}
+
+#featuredlisting .propertytype {
+margin-bottom: 10px;
+}
+
+/** Listing Wrapper
+==============================================================================*/
+
+#listingwrap {
+float: left;
+width: 963px;
+background: url(images/listing_bg.jpg) repeat-y;
+}
+
+/** Sidebar
+==============================================================================*/
+
+#sidebar {
+float: left;
+width: 309px;
+padding: 19px 0 19px 19px;
+border-left: 1px solid #3c69ac;
+border-right: 1px solid #4e79bb;
+background: url(images/header_intro_bg.jpg) repeat-x #204782 bottom;
+}
+
+#sidebar ul {
+list-style-type: none;
+}
+
+#sidebar ul li {
+text-align: left;
+}
+
+#sidebar ul li a {
+display: block;
+padding: 5px 0 5px 0;
+width: 309px;
+color: #999999;
+background: url(images/subnav_item_bg.jpg) no-repeat bottom;
+}
+
+#sidebar ul li a:hover {
+color: #cccccc;
+}
+
+#sidebar ul li.current-cat a {
+color: #ffffff;
+background: url(images/subnav_current_bg.jpg) repeat-y;
+}
+
+/** Search Result
+==============================================================================*/
+
+.searchresult {
+float: right;
+margin: 20px 0 0 0;
+width: 610px;
+background: url(images/search_result_description_bg.jpg) repeat-x bottom #efefef;
+}
+
+.searchresult img {
+float: left;
+}
+
+.listinginfo {
+float: left;
+}
+
+.excerpt {
+width: 268px;
+font-size: 11px;
+line-height: 15px;
+margin: 0 0 0 20px;
+}
+
+.listinginfo .address {
+width: 288px;
+}
+
+.listinginfo .price {
+font-size: 18px;
+}
+
+.mls {
+color: #999999;
+}
+
+#searchnav {
+float: right;
+width: 610px;
+margin: 20px 0 0 0;
+}
+
+#searchnav a#btnleft, #searchnav a#btnright {
+display: block;
+width: 145px;
+height: 27px;
+text-align: center;
+padding: 3px 0 0 0;
+}
+
+#searchnav a#btnleft {
+float: left;
+background: url(images/searchnav_btnleft.jpg) no-repeat;
+}
+
+#searchnav a#btnright {
+float: right;
+background: url(images/searchnav_btnright.jpg) no-repeat;
+}
+
+.noresults {
+float: left;
+margin: 20px 0 0 20px;
+}
+
+/** Listing Detail
+==============================================================================*/
+
+#listingdetail {
+float: right;
+width: 635px;
+}
+
+#listingdetail h3, #listingdetail .location {
+float: left;
+width: 400px;
+margin-left: 0px;
+}
+
+#listingdetail img {
+margin: 0 0 20px 20px;
+border: 1px solid #999999;
+padding: 2px;
+}
+
+#imagesnav ul {
+display: none;
+}
+
+#imagesnav {
+float: right;
+width: 590px;
+margin: 0 3px 0 0;
+padding: 4px 20px 4px 20px;
+background: url(images/gallery_nav_bg.jpg) repeat-x;
+}
+
+#imageslides {
+float: left;
+width: 630px;
+height: 438px;
+}
+
+#imagesnav span.jFlowControl, .jFlowNext, .jFlowPrev {
+cursor: pointer;
+}
+
+.jFlowPrev {
+padding: 0 0 0 30px;
+background: url(images/gallery_left_btn.jpg) no-repeat left;
+}
+
+.jFlowNext {
+padding: 0 30px 0 0;
+background: url(images/gallery_right_btn.jpg) no-repeat right;
+}
+
+#listingdetail .address {
+float: right;
+width: 590px;
+margin: 0 3px 20px 0;
+}
+
+#listingdetail .price {
+font-size: 26px;
+}
+
+#listingdetail p, #listingdetail h4, #listingdetail h5, #listingdetail ul {
+margin-left: 20px;
+}
+
+#listingdetail ul {
+font-size: 12px;
+margin-top: 20px;
+}
+
+#listingdetail ul li {
+color: #999999;
+line-height: 18px;
+margin: 0 0 18px 0;
+}
+
+#listingdetail p {
+color: #999999;
+font-size: 12px;
+}
+
+/** Comments
+==============================================================================*/
+
+#commentform {
+margin: 0 20px 32px 0;
+padding: 16px 0 0 0;
+}
+
+#respond form {
+float: right;
+margin: 0 0 0 20px;
+}
+
+input {
+display: block;
+float: left;
+margin: 5px 5px 1px 0;
+}
+
+fieldset {
+border: none;
+}
+
+/*input, textarea {
+padding: 2px;
+width: 350px;
+border: 1px solid #aaa;
+}*/
+
+textarea {
+margin: 5px 5px 1px 0;
+overflow: hidden;
+}
+
+#submit {
+float: right;
+width: 128px;
+height: 24px;
+border: none;
+display: inline;
+margin: 10px 152px 0 0;
+background-color: #aaa;
+text-transform: uppercase;
+font-size: 11px;
+}
+
+.avatarwrap { 
+float: left;
+width: 167px;
+margin: 0 0 24px 0;
+background: url(images/comments_tail.jpg) no-repeat right 12px;
+}
+
+.name, .date {
+font-size: 10px;
+padding: 0;
+margin: 0;
+line-height: 16px;
+}
+
+.avatar {
+margin: 0;
+padding: 0;
+}
+
+.avatarwrap p {
+margin: 0;
+padding: 0;
+font-size: 10px;
+}
+
+.avatarwrap .date {
+color: #808072;
+}
+
+.comment {
+float: right;
+width: 436px;
+padding: 16px;
+margin: 0 0 24px 0;
+background-color: #eeeeee;
+}
+
+#comment_post_ID, #comment_parent, #_wp_unfiltered_html_comment {
+display: none;
+}
+
+
+/** Footer
+==============================================================================*/
+
+#footer {
+float: left;
+width: 960px;
+margin: 30px 0 0 0;
+border-top: 1px solid #cfcfcf;
+background: url(images/footer_bg.jpg) repeat-x top;
+}
+
+#footer p {
+margin: 10px 20px 20px 10px;
+color: #aaaaaa;
+font-size: 11px;
+}
