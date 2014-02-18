@@ -16,7 +16,7 @@ class user {
         //echo $sql;
         $user = $this->db->get_array($sql);
         //print_r($user);
-        if ($user[0][password] == sha1(filter_input(INPUT_POST,'password'))) {
+        if ($user[0][password] == sha1(filter_input(INPUT_POST, 'password'))) {
             $_SESSION[loggedin] = 1;
             $_SESSION[access] = $user[0][access_level];
             $_SESSION[username] = $user[0][username];
@@ -48,20 +48,20 @@ class user {
     }
 
     function update_profile() {
-        $username = ereg_replace('[^a-zA-Z0-9]', '', filter_input(INPUT_POST,'username'));
-        $password = ereg_replace('[^a-zA-Z0-9]', '', filter_input(INPUT_POST,'password'));
-        $password2 = ereg_replace('[^a-zA-Z0-9]', '', filter_input(INPUT_POST,'password2'));
+        $username = ereg_replace('[^a-zA-Z0-9]', '', filter_input(INPUT_POST, 'username'));
+        $password = ereg_replace('[^a-zA-Z0-9]', '', filter_input(INPUT_POST, 'password'));
+        $password2 = ereg_replace('[^a-zA-Z0-9]', '', filter_input(INPUT_POST, 'password2'));
         $dob = $_POST['year'] . '-' . $_POST['month'] . '-' . $_POST['day'];
-        $email1 = ereg_replace('[^a-zA-Z0-9\@\.\_]', '', filter_input(INPUT_POST,'email1',FILTER_SANITIZE_EMAIL));
-        $paypal_email = ereg_replace('[^a-zA-Z0-9\@\.\_]', '',  filter_input(INPUT_POST,'paypal_email',FILTER_SANITIZE_EMAIL));
+        $email1 = ereg_replace('[^a-zA-Z0-9\@\.\_]', '', filter_input(INPUT_POST, 'email1', FILTER_SANITIZE_EMAIL));
+        $paypal_email = ereg_replace('[^a-zA-Z0-9\@\.\_]', '', filter_input(INPUT_POST, 'paypal_email', FILTER_SANITIZE_EMAIL));
         $sql = 'update ' . $this->config[database][prefix] . 'users set `email1` = "' . $email1 . '", `paypal_email` = "' . $paypal_email . '" where `id` = ' . $_SESSION[id];
         mysql_query($sql);
     }
 
     function register() {
-        $username = ereg_replace('[^a-zA-Z0-9]', '', $_POST['username']);
-        $password = ereg_replace('[^a-zA-Z0-9]', '', $_POST['password']);
-        $password2 = ereg_replace('[^a-zA-Z0-9]', '', $_POST['password2']);
+        $username = ereg_replace('[^a-zA-Z0-9]', '', filter_input(INPUT_POST, 'username'));
+        $password = ereg_replace('[^a-zA-Z0-9]', '', filter_input(INPUT_POST, 'password'));
+        $password2 = ereg_replace('[^a-zA-Z0-9]', '', filter_input(INPUT_POST, 'password2'));
         $dob = $_POST['year'] . '-' . $_POST['month'] . '-' . $_POST['day'];
         $res = mysql_query('select * from ' . $this->config[database][prefix] . 'users where username="' . $username . '"');
         if (mysql_num_rows($res) > 0) {
@@ -72,13 +72,14 @@ class user {
             $error[] = 'Passwords do not match';
         }
 
-        $email = ereg_replace('[^a-zA-Z0-9\@\.\_]', '', $_POST['email']);
-        $paypal_email = ereg_replace('[^a-zA-Z0-9\@\.\_]', '', $_POST['paypal_email']);
-        $res = mysql_query('select * from ' . $this->config[database][prefix] . 'users where email1 = "' . $email . '"');
+        $email1 = ereg_replace('[^a-zA-Z0-9\@\.\_]', '', filter_input(INPUT_POST, 'email1', FILTER_SANITIZE_EMAIL));
+        $paypal_email = ereg_replace('[^a-zA-Z0-9\@\.\_]', '', filter_input(INPUT_POST, 'paypal_email', FILTER_SANITIZE_EMAIL));
+        $sql = 'select * from ' . $this->config[database][prefix] . 'users where email1 = "' . $email1 . '"';
+        $res = $this->db->get_res($sql);
         if (mysql_num_rows($res) > 0) {
             $error[] = 'That email address has already been registered.';
         }
-        $phone = ereg_replace('[^0-9\-]', '', $_POST['phone']);
+        $phone = ereg_replace('[^0-9\-]', '', filter_input(INPUT_POST, 'phone'));
         $confirm_key = $this->createConfirmKey(13);
 
         $sql = 'insert into ' . $this->config[database][prefix] . 'users (username,password,email1,paypal_email,dob,access_level,active,confirm_key,registered) values ("' . mysql_real_escape_string($username) . '","' . sha1($password) . '","' . mysql_real_escape_string($email) . '","' . mysql_real_escape_string($paypal_email) . '","' . $dob . '","0","0","' . $confirm_key . '","' . date("Y-m-d h:i:s") . '")';
@@ -115,7 +116,7 @@ class user {
 	   ' . $this->config[site][tagline];
 
         $headers = 'From: ' . $this->config[site][noreply] . "\r\n" .
-                'X-Mailer: OkinawaSwap' . "\r\n" .
+                'X-Mailer: ' . $this->config[site][short_name] . "\r\n" .
                 'Content-Type: text/html; charset=UTF-8' . "\r\n";
         // echo $message;
         mail($to, $subject, $message, $headers, '-f' . $this->config[site][noreply]);
@@ -237,5 +238,3 @@ class user {
     }
 
 }
-
-?>

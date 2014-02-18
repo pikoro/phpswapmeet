@@ -18,9 +18,7 @@ class news {
     }
 
     function show_news() {
-        
+        // Need to add something here
     }
 
 }
-
-?>

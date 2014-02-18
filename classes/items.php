@@ -11,12 +11,17 @@ class items {
     }
 
     function add() {
+        // Filter input
         $sessionId = filter_input(INPUT_SESSION, 'id');
-        $name = filter_input(INPUT_POST,'name');
-        $category = filter_input(INPUT_POST,'category',FILTER_SANITIZE_NUMBER_INT);
-        $description = filter_input(INPUT_POST,'description');
-        
-        $sql = 'insert into ' . $this->config[database][prefix] . 'items (`custid`,`name`,`category`,`description`,`condition`,`post_type`,`value`,`notes`) values ("' . $sessionId . '","' . $name . '","' . $category . '","' . mysql_real_escape_string($_POST[description]) . '","' . mysql_real_escape_string($_POST[condition]) . '","' . mysql_real_escape_string($_POST[post_type]) . '","' . mysql_real_escape_string($_POST[value]) . '","' . mysql_real_escape_string($_POST[notes]) . '")';
+        $name = filter_input(INPUT_POST, 'name');
+        $category = filter_input(INPUT_POST, 'category', FILTER_SANITIZE_NUMBER_INT);
+        $description = filter_input(INPUT_POST, 'description');
+        $condition = filter_input(INPUT_POST, 'condition');
+        $post_type = filter_input(INPUT_POST, 'post_type');
+        $value = filter_input(INPUT_POST, 'value');
+        $notes = filter_input(INPUT_POST, 'notes');
+
+        $sql = 'insert into ' . $this->config[database][prefix] . 'items (`custid`,`name`,`category`,`description`,`condition`,`post_type`,`value`,`notes`) values ("' . $sessionId . '","' . $name . '","' . $category . '","' . $description . '","' . $condition . '","' . $post_type . '","' . $value . '","' . $notes . '")';
         //echo $sql;
         $inst = $this->db->query($sql); // Stick the item into the db
         //$item_id = mysqli_insert_id($inst);
@@ -28,38 +33,35 @@ class items {
             if ($filename != '') {
                 $filename = $this->config[site][homedir] . '/' . $this->config[settings][imagedir] . 'file' . $i; // specify new temp filename
                 move_uploaded_file($_FILES['photo']['tmp_name'][$i], $filename); // Moves file to image directory
-                //unlink($_FILES['photo']['tmpname'][$i]); // delete temporary file
                 `convert -flatten $filename $filename.jpg`; // Change it to a JPEG
                 unlink($filename); // delete new temp file
                 $new_filename = md5_file($filename . '.jpg') . '.jpg'; // Generate new filename based on md5 hash
                 $new_img = $this->config[site][homedir] . '/' . $this->config[settings][imagedir] . $new_filename; // set new path
                 $thumb_image = $this->config[site][homedir] . '/' . $this->config[settings][imagedir] . 'thumb/' . $new_filename;
-                `convert $filename.jpg -quality 50 -resize 600x600 $new_img`; // resize image
-                //copy($new_img,$this->config[settings][imagedir].$new_img); // copy to image dir
-                `convert -quality 40 -resize 65x65 $filename.jpg $thumb_image`; // resize thumbnail
-                //echo "<br>convert -quality 40 -resize 65x65 $filename.jpg $thumb_image";
-                //copy($new_img,$this->config[settings][imagedir].'thumb/' .$new_img); // copy to thumb dir
-                //burn the evidence
-                //unlink($_FILES['photo']['tmpname'][$i]);
-                //unlink($filename);
-                //db it
+                `convert $filename.jpg -quality 80 -resize 600x600 $new_img`; // resize image
+                `convert -quality 80 -resize 100x100 $filename.jpg $thumb_image`; // resize thumbnail to 100pxx100px
                 $sql = 'insert into ' . $this->config[database][prefix] . 'images (item_id, imagename) values ("' . $item_id . '","' . $new_filename . '")';
                 $this->db->query($sql);
             }
         }
         // End New Image Processing
-        //$newimage = "images/".md5_file($_FILES['photo']['tmp_name']).''.$imagename;
-        //echo $newimage;
-        //$result = @move_uploaded_file($_FILES['photo']['tmp_name'], $newimage);
-        //if(empty($result)) $error["result"] = "There was an error moving the uploaded file.";
 
-        return $error;
+        return $error; // not sure why I put this here
     }
 
     function edit($item) {
+        $sessionId = filter_input(INPUT_SESSION, 'id');
+        $name = filter_input(INPUT_POST, 'name');
+        $category = filter_input(INPUT_POST, 'category', FILTER_SANITIZE_NUMBER_INT);
+        $description = filter_input(INPUT_POST, 'description');
+        $condition = filter_input(INPUT_POST, 'condition');
+        $post_type = filter_input(INPUT_POST, 'post_type');
+        $value = filter_input(INPUT_POST, 'value');
+        $notes = filter_input(INPUT_POST, 'notes');
+
         $my_item = $this->get_item_permission($item, $_SESSION[id]);
         if ($my_item == TRUE) {
-            $sql = 'update ' . $this->config[database][prefix] . 'items set `name`="' . mysql_real_escape_string($_POST[name]) . '", `category`="' . mysql_real_escape_string($_POST[category]) . '", `description`="' . mysql_real_escape_string($_POST[description]) . '", `condition`="' . mysql_real_escape_string($_POST[condition]) . '", `post_type`="' . mysql_real_escape_string($_POST[post_type]) . '",`value` = "' . mysql_real_escape_string($_POST[value]) . '", `notes`="' . mysql_real_escape_string($_POST[notes]) . '" where `id`=' . $item . ' and `custid` = ' . $_SESSION[id];
+            $sql = 'update ' . $this->config[database][prefix] . 'items set `name`="' . $name . '", `category`="' . $category . '", `description`="' . $description . '", `condition`="' . $condition . '", `post_type`="' . $post_type . '",`value` = "' . $value . '", `notes`="' . $notes . '" where `id`=' . $item . ' and `custid` = ' . $sessionId;
             //echo $sql;
             $this->db->query($sql);
             $this->logger->logit("[items] $_SESSION[id] edited item $item");
@@ -217,5 +219,3 @@ class items {
     }
 
 }
-
-?>

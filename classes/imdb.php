@@ -8,9 +8,9 @@ class imdb {
 
     function get_info($number) {
         $imdb_content = $this->get_page_content($this->url . '/' . $number);
-        $array = $parse_product_name($imdb_content);
+        $array = parse_product_name($imdb_content);
         $array[url] = $this->url . '/' . $number;
-        $content = $build_content($array);
+        $content = build_content($array);
         return $content;
     }
 
@@ -36,7 +36,7 @@ class imdb {
         $content.= '<h2>Release Date</h2><p>' . substr($array[release_date], 0, strpos($array[release_date], '<a')) . '</p>';
         $content.= '<h2>MPAA</h2><p>' . $array[mpaa] . '</p>';
         $content.= '<h2>Run Time</h2><p>' . $array[run_time] . '</p>';
-        $content.= '<h2>Full Details</h2><p><a href="' . $this->url . '" rel="nofollow">' . $this->$url . '</a></p>';
+        $content.= '<h2>Full Details</h2><p><a href="' . $this->url . '" rel="nofollow">' . $this->url . '</a></p>';
     }
 
     function get_match($regex, $content) {

@@ -23,9 +23,9 @@ while($row=mysql_fetch_object($res)){
 	}
 	$new_img = 'new-'.$imagename;
 	$op_img = '2-'.$new_img;
-    `convert images/$imagename -quality 50 -resize 600x600 images/$new_img`; // resize image
+    `convert images/$imagename -quality 80 -resize 600x600 images/$new_img`; // resize image
 	//`jpegtran -copy none images/$new_img > images/$op_img`;
-	`convert -quality 40 -resize 65x65 images/$new_img images/thumb/$imagename`; // resize thumbnail
+	`convert -quality 80 -resize 100x100 images/$new_img images/thumb/$imagename`; // resize thumbnail
 	unlink('images/'.$imagename); // remove original file
 	@copy('images/'.$new_img,'images/'.$imagename); // copy new file to original name
 	unlink('images/'.$new_img); // remove new file
