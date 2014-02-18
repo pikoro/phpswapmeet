@@ -4,30 +4,46 @@ class database {
 
     function database() {
         require('includes/config.php');
+        
         mysql_connect($config[database][server], $config[database][dbuser], $config[database][dbpass]);
         mysql_select_db($config[database][db]);
-        //$this->logger = new logger();
+        
     }
 
     function query($sql) {
-        @mysql_query($sql);
+        try {
+            mysql_query($sql);
+        } catch (Exception $e) {
+            
+            echo 'A database error has occured.  Please contact the site administrator: ' .$e;
+        }
     }
 
     function get_res($sql) {
-        $res = @mysql_query($sql);
-        return $res;
+        try {
+            $res = mysql_query($sql);
+            return $res;
+        } catch (Exception $e) {
+            //$this->logger->logit($e);
+            echo 'A database error has occured.  Please contact the site administrator: ' .$e;
+        }
     }
 
     function get_array($sql) {
-        $res = @mysql_query($sql);
-        for ($i = 0; $i < @mysql_num_rows($res); $i++) {
-            $array[] = @mysql_fetch_array($res);
+        try {
+            $res = mysql_query($sql);
+            for ($i = 0; $i < mysql_num_rows($res); $i++) {
+                $array[] = mysql_fetch_array($res);
+            }
+            return $array;
+        } catch (Exception $e) {
+            //$this->logger->logit($e);
+            echo 'A database error has occured.  Please contract the site administrator: ' .$e;
         }
-        return $array;
     }
 
     function close() {
-        @mysql_close();
+        mysql_close();
     }
 
     function release($res) {
@@ -35,4 +51,3 @@ class database {
     }
 
 }
-
