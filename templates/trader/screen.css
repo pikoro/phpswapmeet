@@ -1,292 +1,292 @@
 /* This rule resets a core set of elements so that they will appear consistent across browsers. Without this rule, content styled with an h1 tag, for example, would appear in different places in Firefox and Internet Explorer because each browser has a different top margin default value. By resetting these values to 0, the elements will initially be rendered in an identical fashion and their properties can be easily defined by the designer in any subsequent rule. */
 html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6 {
-	margin: 0;
-	padding: 0;
-	border: 0;
-	outline: 0;
-	font-size: 100%;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    font-size: 100%;
 }
 img {
-	border-style: none;
-	display: block;
+    border-style: none;
+    display: block;
 }
 p {
-	text-align: left;
-	margin: 0px;
-	padding: 0px;
+    text-align: left;
+    margin: 0px;
+    padding: 0px;
 }
 body {
-	color: #000;
-	font-family: Arial, Helvetica, sans-serif;
-	font-size: 12px;
-	line-height: 14px;
-	margin: 0 0 0 0;
-	padding: 0 0 0 0;
-	text-align: center;
-	background: #666 url(images/bg-fade.jpg) repeat-x top;
+    color: #000;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    line-height: 14px;
+    margin: 0 0 0 0;
+    padding: 0 0 0 0;
+    text-align: center;
+    background: #666 url(images/bg-fade.jpg) repeat-x top;
 }
 h1 {
-	color: #000;
-	font-family: "Trebuchet MS", Helvetica, sans-serif;
-	font-size: 22px;
-	font-weight: normal;
-	line-height: 26px;
-	margin-bottom: 15px;
-	letter-spacing: -1px;
+    color: #000;
+    font-family: "Trebuchet MS", Helvetica, sans-serif;
+    font-size: 22px;
+    font-weight: normal;
+    line-height: 26px;
+    margin-bottom: 15px;
+    letter-spacing: -1px;
 }
 h2 {
-	color: #333333;
-	font: normal 18px/14px "Trebuchet MS", Arial, Verdana, sans-serif;
-	padding-top: 10px;
-	padding-bottom: 10px;
-	border-bottom: 2px solid #99CC00;
-	margin-bottom: 10px;
+    color: #333333;
+    font: normal 18px/14px "Trebuchet MS", Arial, Verdana, sans-serif;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #99CC00;
+    margin-bottom: 10px;
 }
 a, a:link {
-	color: #66AA00;
-	font-weight: bold;
-	text-decoration: none;
+    color: #66AA00;
+    font-weight: bold;
+    text-decoration: none;
 }
 a:visited {
-	color: #66AA00;
-	font-weight: bold;
-	text-decoration: none;
+    color: #66AA00;
+    font-weight: bold;
+    text-decoration: none;
 }
 a:hover {
-	color: #99CC00;
-	text-decoration: overline underline;
+    color: #99CC00;
+    text-decoration: overline underline;
 }
 a:focus {
-	color: #000;
-	outline: none;
+    color: #000;
+    outline: none;
 }
 a:active {
-	color: #000;
-	outline: none;
+    color: #000;
+    outline: none;
 }
 #headerWrapper {
-	padding: 0px 0px 0px 0px;
-	background: url(images/header-fill.jpg) repeat-x top;
+    padding: 0px 0px 0px 0px;
+    background: url(images/header-fill.jpg) repeat-x top;
 }
 #header {
-	margin: 0px auto;
-	padding: 0px;
-	width: 920px;
-	text-align: left;
-	height: 117px;
+    margin: 0px auto;
+    padding: 0px;
+    width: 920px;
+    text-align: left;
+    height: 117px;
 }
 #logo {
-	float: left;
+    float: left;
 }
 #tagline {
-	text-align: right;
-	padding-right: 10px;
-	padding-top: 0px;
-	height: 28px;
-	padding-bottom: 0px;
-	float: right;
-	font-size: 13px;
-	line-height: 28px;
-	font-weight: bold;
+    text-align: right;
+    padding-right: 10px;
+    padding-top: 0px;
+    height: 28px;
+    padding-bottom: 0px;
+    float: right;
+    font-size: 13px;
+    line-height: 28px;
+    font-weight: bold;
 }
 #tagline a {
     color: #000;
 }
 #nav {
-	float: right;
-	clear: right;
+    float: right;
+    clear: right;
 }
 #nav ul {
-	margin: 0px;
-	padding: 0px;
+    margin: 0px;
+    padding: 0px;
 }
 #nav ul li {
-	margin: 0px;
-	display: block;
-	float: left;
-	list-style: none;
-	clear: right;
+    margin: 0px;
+    display: block;
+    float: left;
+    list-style: none;
+    clear: right;
 }
 #nav ul li a {
-	font: bold 16px/89px "Trebuchet MS", Arial, Verdana, sans-serif;
-	display: block;
-	padding-right: 15px;
-	padding-left: 15px;
-	text-align: center;
-	color: #999999;
+    font: bold 16px/89px "Trebuchet MS", Arial, Verdana, sans-serif;
+    display: block;
+    padding-right: 15px;
+    padding-left: 15px;
+    text-align: center;
+    color: #999999;
 }
 #nav ul li a:hover {
-	background: url(images/nav-hover.jpg) repeat-x top;
-	text-decoration: none;
-	color: #99CC00;
+    background: url(images/nav-hover.jpg) repeat-x top;
+    text-decoration: none;
+    color: #99CC00;
 }
 #nav ul li#active {
-	background: url(images/nav-hover.jpg) repeat-x top;
-	text-decoration: none;
+    background: url(images/nav-hover.jpg) repeat-x top;
+    text-decoration: none;
 }
 #nav ul li#active a {
-	color: #FFFFFF;
+    color: #FFFFFF;
 }
 #outerWrapper {
-	margin: 0 auto 15px;
-	text-align: left;
-	width: 920px;
-	background: #FFFFFF;
+    margin: 0 auto 15px;
+    text-align: left;
+    width: 920px;
+    background: #FFFFFF;
 }
 #featureWrapper {
-	background: url(images/feature-wrap-fade.jpg) repeat-x top;
-	text-align: left;
+    background: url(images/feature-wrap-fade.jpg) repeat-x top;
+    text-align: left;
 }
 #featureWrapper #feature {
-	background: url(images/feature-fade.jpg) repeat-x top;
-	margin: 0px auto;
-	height: 233px;
-	width: 920px;
+    background: url(images/feature-fade.jpg) repeat-x top;
+    margin: 0px auto;
+    height: 233px;
+    width: 920px;
 }
 #feature .feature-title {
-	color: #FFFFFF;
-	padding-top: 20px;
-	padding-left: 25px;
-	font: normal 26px/28px "Trebuchet MS", Arial, Verdana, sans-serif;
-	letter-spacing: -1px;
+    color: #FFFFFF;
+    padding-top: 20px;
+    padding-left: 25px;
+    font: normal 26px/28px "Trebuchet MS", Arial, Verdana, sans-serif;
+    letter-spacing: -1px;
 }
 #feature .feature-text {
-	font-size: 16px;
-	font-weight: bold;
-	color: #EFFFBF;
-	padding-top: 10px;
-	padding-left: 30px;
-	line-height: 20px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #EFFFBF;
+    padding-top: 10px;
+    padding-left: 30px;
+    line-height: 20px;
 }
 #feature li {
-	padding-bottom: 7px;
-	color: #000000;
-	margin-left: 10px;
-	font-size: 12px;
-	font-weight: bold;
+    padding-bottom: 7px;
+    color: #000000;
+    margin-left: 10px;
+    font-size: 12px;
+    font-weight: bold;
 }
 #feature ul {
-	margin-bottom: 0px;
-	padding-bottom: 0px;
+    margin-bottom: 0px;
+    padding-bottom: 0px;
 }
 #outerWrapper #contentWrapper #leftColumn1 {
-	float: left;
-	padding: 20px 10px 10px 15px;
-	width: 195px;
-	line-height: 16px;
+    float: left;
+    padding: 20px 10px 10px 15px;
+    width: 195px;
+    line-height: 16px;
 }
 #leftColumn1 ul {
-	margin: 0px;
-	padding: 10px 0px 20px;
+    margin: 0px;
+    padding: 10px 0px 20px;
 }
 #leftColumn1 ul li {
-	list-style: none;
-	display: inline;
+    list-style: none;
+    display: inline;
 }
 #leftColumn1 ul li a {
-	display: block;
-	padding: 5px 4px 5px 15px;
-	line-height: 15px;
-	background: url(images/sidenav.gif) no-repeat left top;
-	font-family: Arial, Helvetica, sans-serif;
-	font-weight: normal;
+    display: block;
+    padding: 5px 4px 5px 15px;
+    line-height: 15px;
+    background: url(images/sidenav.gif) no-repeat left top;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: normal;
 }
 #leftColumn1 ul li a:hover {
-	text-decoration: none;
-	background: url(images/sidenav.gif) no-repeat left -25px;
-	color: #000000;
+    text-decoration: none;
+    background: url(images/sidenav.gif) no-repeat left -25px;
+    color: #000000;
 }
 .sidebarlt {
-	padding: 10px;
-	border: 1px solid #99CC00;
-	background: #F5FFD7;
-	margin-bottom: 15px;
+    padding: 10px;
+    border: 1px solid #99CC00;
+    background: #F5FFD7;
+    margin-bottom: 15px;
 }
 .sidebardk {
-	color: #FFFFFF;
-	background: #666666;
-	border: 1px solid #000000;
-	padding: 10px;
-	margin-bottom: 15px;
+    color: #FFFFFF;
+    background: #666666;
+    border: 1px solid #000000;
+    padding: 10px;
+    margin-bottom: 15px;
 }
 .sidebardk a, .sidebardk a:hover, .sidebardk a:visited, sidebardk a:active {
-	color: #FFFFFF;
+    color: #FFFFFF;
 }
 .sidebarbox {
-	background: url(images/sidebox-fill.gif) repeat-y left;
-	margin-top: 15px;
-	margin-bottom: 15px;
+    background: url(images/sidebox-fill.gif) repeat-y left;
+    margin-top: 15px;
+    margin-bottom: 15px;
 }
 .sidebarbox p {
-	margin: 0px;
-	padding: 0px;
+    margin: 0px;
+    padding: 0px;
 }
 .sidebarboxtop {
-	background: url(images/sidebox-top.gif) no-repeat left top;
-	padding: 12px 10px 0px;
+    background: url(images/sidebox-top.gif) no-repeat left top;
+    padding: 12px 10px 0px;
 }
 .sidebarboxbottom {
-	background: url(images/sidebox-bottom.gif) no-repeat left bottom;
-	height: 13px;
+    background: url(images/sidebox-bottom.gif) no-repeat left bottom;
+    height: 13px;
 }
 #outerWrapper #contentWrapper #content {
-	margin: 0 15px 0 220px;
-	padding: 20px 10px 20px 10px;
-	line-height: 20px;
+    margin: 0 15px 0 220px;
+    padding: 20px 10px 20px 10px;
+    line-height: 20px;
 }
 #outerWrapper #contentWrapper #content p {
-	margin-bottom: 10px;
+    margin-bottom: 10px;
 }
 #outerWrapper #contentWrapper {
-	background: url(images/content-fade.jpg) repeat-x top;
+    background: url(images/content-fade.jpg) repeat-x top;
 }
 #outerWrapper #contentWrapper .clearFloat {
-	clear: both;
-	display: block;
+    clear: both;
+    display: block;
 }
 #outerWrapper #footer {
-	padding: 18px 20px 0px;
-	background: #666666 url(images/footer.jpg) no-repeat left top;
-	height: 30px;
-	margin: 0px;
-	clear: both;
+    padding: 18px 20px 0px;
+    background: #666666 url(images/footer.jpg) no-repeat left top;
+    height: 30px;
+    margin: 0px;
+    clear: both;
 }
 
 #footer a {
     color:#000;
 }
 .fltlft {
-	float: left;
-	margin-right: 10px;
-	margin-bottom: 10px;
+    float: left;
+    margin-right: 10px;
+    margin-bottom: 10px;
 }
 .fltrt {
-	float: right;
-	margin-left: 10px;
-	margin-bottom: 10px;
+    float: right;
+    margin-left: 10px;
+    margin-bottom: 10px;
 }
 #credit {
-	text-align: center;
-	background: #666666;
-	color: #999999;
-	padding-top: 8px;
-	padding-bottom: 8px;
-	font-size: 11px;
+    text-align: center;
+    background: #666666;
+    color: #999999;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    font-size: 11px;
 }
 #credit a, #credit a:hover, #credit a:visited, #credit a:active, #credit a:focus {
-	color: #999999;
+    color: #999999;
 }
 
 .class2 {
-	display:block;
+    display:block;
 }
 
 .class3 {
-	display:none;
+    display:none;
 }
 
 #required {
-	color: #FF0000;
+    color: #FF0000;
 }
 
 #categories{
@@ -298,7 +298,7 @@ a:active {
     width: 33%;
 }
 #categories li{
-    list-style-image: url(/templates/sublime/images/imgBluDivot.gif);
+    list-style-image: url(/templates/trader/images/imgBluDivot.gif);
     list-style-position: inside;
 }
 #categories li a{
@@ -330,54 +330,54 @@ a:active {
 }
 
 .userlist {
-	width:100%;
-	text-align: center;
+    width:100%;
+    text-align: center;
 }
 .userlist th {
-	background-color:#EFFFBF;
-	border: 1px solid #99CC00;
+    background-color:#EFFFBF;
+    border: 1px solid #99CC00;
 
 }
 
 .list_image {
-	border:1px solid #000;
-	background-color: #FFF;
-	padding:3px;
+    border:1px solid #000;
+    background-color: #FFF;
+    padding:3px;
 }
 
 .result_list {
-	border:1px #000 solid;
-	width:500px;
-	height:83px;
-	margin:3px;
-	background-color:#EEE;
+    border:1px #000 solid;
+    width:500px;
+    height:83px;
+    margin:3px;
+    background-color:#EEE;
 }
 
 div.page {
-      background: #FFFFFF;
-      border-top: 1px solid #FFBF99;
-      border-bottom: 1px solid #FFBF99;
+    background: #FFFFFF;
+    border-top: 1px solid #FFBF99;
+    border-bottom: 1px solid #FFBF99;
 }
 
 .detail_main_pic{
-	
-	/*float:left;*/
-	display:inline;
+
+    /*float:left;*/
+    display:inline;
 }
 
 .detail_thumbs {
-	margin-right:10px;
-	margin-left:auto;
-	
+    margin-right:10px;
+    margin-left:auto;
+
 }
 .detail_thumbs input{ 
-	border:1px solid #000;
-	margin-left:25px;
+    border:1px solid #000;
+    margin-left:25px;
 }
 
 .pic_wrapper {
-	height:auto;
-	margin-bottom:10px;
+    height:auto;
+    margin-bottom:10px;
 }
 
 
@@ -389,7 +389,7 @@ div.page {
     height:30px;
     background-color:yellow;
     color:black;
-    float;
+
 }
 
 
