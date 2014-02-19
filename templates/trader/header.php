@@ -1,31 +1,3 @@
-<!-- Begin Header 
-<style type="text/css" media="screen">
-    <!--
-    @import url("templates/<?= $config[site][template] ?>/screen.css");
-   
-</style>
-<style type="text/css" media="handheld">
-    <!--
-    @import url("templates/<?= $config[site][template] ?>/handheld.css");
-   
-</style>
--->
-<!--[if IE 5]>
-<style type="text/css">
-/* IE 5 does not use the standard box model, so the column widths are overidden to render the page correctly. */
-#outerWrapper #contentWrapper #leftColumn1 {
-  width: 220px;
-}
-</style>
-<![endif]-->
-<!--[if IE]>
-<style type="text/css">
-/* The proprietary zoom property gives IE the hasLayout property which addresses several bugs. */
-#outerWrapper #contentWrapper #content {
-  zoom: 1;
-}
-</style>
-<![endif]-->
 <div id="headerWrapper">
     <div id="header">
         <div id="logo"><a href="<?= $config[site][url] ?>"><img src="templates/<?= $config[site][template] ?>/images/logo.jpg" alt="" width="210" height="117" /></a></div>
@@ -40,10 +12,10 @@
             <ul>
                 <!-- To make the current page menu item highlighted, use the id="active" for the current page -->
                 <li<?
-        if (!$_GET[p]) {
-            echo ' id="active"';
-        }
-        ?>><a href="<?= $config[site][url] ?>">Top</a></li>
+                if (!$_GET[p]) {
+                    echo ' id="active"';
+                }
+                ?>><a href="<?= $config[site][url] ?>">Top</a></li>
                     <?
                     if ($_SESSION[active] == 1) {
                         echo '<li ';
@@ -57,12 +29,12 @@
                 if ($_GET[p] == 'news') {
                     echo ' id="active"';
                 }
-                    ?>><a href="?p=news">News</a></li>
+                ?>><a href="?p=news">News</a></li>
                 <li<?
-                    if ($_GET[p] == 'faq') {
-                        echo ' id="active"';
-                    }
-                    ?>><a href="?p=faq">FAQ</a></li>
+                if ($_GET[p] == 'faq') {
+                    echo ' id="active"';
+                }
+                ?>><a href="?p=faq">FAQ</a></li>
                 <li<?
                 if ($_GET[p] == 'about') {
                     echo ' id="active"';
@@ -74,10 +46,10 @@
                 }
                 ?>><a href="?p=contact">Contact</a></li>
                 <li<?
-if ($_GET[p] == 'stores') {
-    echo ' id="active"';
-}
-?>><a href="?p=stores">Stores</a></li>
+                if ($_GET[p] == 'stores') {
+                    echo ' id="active"';
+                }
+                ?>><a href="?p=stores">Stores</a></li>
             </ul>
         </div>
     </div>
@@ -110,58 +82,58 @@ if ($_GET[p]) {
                 <ul>
                     <li><a href="<?= $config[site][url] ?>">Home</a></li>
                     <li><a href="?p=browse&pageID=1">Browse All</a></li>
-                        <?
-                        if (!$_SESSION[loggedin]) {
-                            echo '<li><a href="?p=login">Login</a> </li>';
-                        } else {
-                            echo '<li><a href="?p=desktop">My Desktop</a></li>';
-                        }
-                        ?>
+                    <?
+                    if (!$_SESSION[loggedin]) {
+                        echo '<li><a href="?p=login">Login</a> </li>';
+                    } else {
+                        echo '<li><a href="?p=desktop">My Desktop</a></li>';
+                    }
+                    ?>
                     <li><a href="?p=news">News</a></li>
                     <li><a href="?p=search">Search</a></li>
                     <li>
+                        <?
+                        if ($_GET[cat]) {
+                            echo '<a href="rss.php?cat=' . input_filter(INPUT_GET, 'cat') . '">RSS</a>';
+                        } else {
+                            echo '<a href="rss.php">RSS</a>';
+                        }
+                        ?>
+                    </li>
                     <?
-                    if ($_GET[cat]) {
-                        echo '<a href="rss.php?cat=' . $_GET[cat] . '">RSS</a>';
-                    } else {
-                        echo '<a href="rss.php">RSS</a>';
+                    if (!$_SESSION[access]) {
+                        echo '<li><a href="?p=register">Register</a></li>';
                     }
                     ?>
-                    </li>
-<?
-if (!$_SESSION[access]) {
-    echo '<li><a href="?p=register">Register</a></li>';
-}
-?>
-<?
-if (isset($_SESSION[active]) && $_SESSION[active] == 0) {
-    echo '<li><a href="?p=confirm">Confirm your Account</a></li>';
-}
-?>
-                <?
-                if ($_SESSION[access] == 100) {
-                    echo '<li><a href="?p=admin">Site Admin</a></li>';
-                }
-                ?>
-<?
-if ($_SESSION[loggedin]) {
-    echo '<li><a href="?p=logout">Log Out</a> </li>';
-}
-?>
+                    <?
+                    if (isset($_SESSION[active]) && $_SESSION[active] == 0) {
+                        echo '<li><a href="?p=confirm">Confirm your Account</a></li>';
+                    }
+                    ?>
+                    <?
+                    if ($_SESSION[access] == 100) {
+                        echo '<li><a href="?p=admin">Site Admin</a></li>';
+                    }
+                    ?>
+                    <?
+                    if ($_SESSION[loggedin]) {
+                        echo '<li><a href="?p=logout">Log Out</a> </li>';
+                    }
+                    ?>
                 </ul>
-<? if ($_GET[p]) { ?>
+                <? if ($_GET[p]) { ?>
                     <!-- Sidebar Search Box -->
                     <div class="sidebarbox">
                         <div class="sidebarboxtop">
                             <p>Search:</p>
                             <p><form id="search" name="search" method="post" action="?p=search">
-                                <input type="text" width="80" name="keyword" />&nbsp;<input type="submit" width="20" value="Find It" />
-                            </form></p>
+                                <input type="text" name="keyword" />&nbsp;<input type="submit" value="Find It" />
+                            </form>
                         </div>
                         <div class="sidebarboxbottom"></div>
                     </div>
                     <!-- End Sidebar Search -->
-<? } ?>
+                <? } ?>
                 <? if (!$_SESSION[loggedin]) { // Only display ads to guests  ?>
                     <!-- Google AdSense -->
                     <script type="text/javascript">
@@ -175,7 +147,7 @@ if ($_SESSION[loggedin]) {
                     </script>
                     <script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js"></script>
                     <!-- End Google AdSense -->
-<? } ?>
+                <? } ?>
                 <div class="sidebarbox">
                     <div class="sidebarboxtop">
                         <p><strong>Featured Categories</strong></p>
@@ -186,7 +158,7 @@ if ($_SESSION[loggedin]) {
                     </div>
                     <div class="sidebarboxbottom"></div>
                 </div>
-<? if ($_SESSION[loggedin]) { ?>
+                <? if ($_SESSION[loggedin]) { ?>
                     <p class="sidebardk"><strong>Statistics</strong><br />
                         <br />
                         My Feedback Score: <a href="?p=my_feedback"><?= $feedback->get_feedback_num($_SESSION[id]) ?></a><br />
@@ -196,24 +168,19 @@ if ($_SESSION[loggedin]) {
                         Items Available: <?= $items->count_available() ?><br />
                         <br />
                     </p>
-<? } else { ?>
+                <? } else { ?>
                     <p class="sidebardk"><strong>Site Statistics</strong><br />
                         <br />
                         Registered Users: <?= $users->total_users() ?><br />
                         Items Available: <?= $items->count_available() ?><br />
                         <br />
                     </p>
-<? } ?>
+                <? } ?>
                 <p class="sidebarlt"><strong>Other Websites</strong><br />
                     <br />
-                    <a href="http://www.init.sh" target="_blank" alt="Personal Knowledge Base">init.sh</a><br />
-                    <a href="http://www.owh.net" target="_blank" alt="Tiny Link Maker">Owh Links</a><br />
-                    <a href="http://www.o-singles.com" target="_blank" alt="Okinawa Match Making Site">Okinawa Singles</a><br />
-                    <a href="http://www.touchmi.jp" target="_blank" alt="Multitouch Table Maker">TouchMi</a><br />
-                    <a href="http://www.wireless-central.net" target="_blank" alt="All Things Wireless">Wireless Central</a><br />
-                    <a href="http://www.psphacks.net" target="_blank" alt="PSPHacks">PSP Hacks</a><br />
-
-
+                    <a href="http://www.init.sh" target="_blank" >init.sh</a><br />
+                    <a href="http://www.owh.net" target="_blank">Owh Links</a><br />
+                    <a href="http://www.touchmi.jp" target="_blank">TouchMi</a><br />
                     <br />
                 </p>
 

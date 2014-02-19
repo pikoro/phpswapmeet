@@ -1,2 +1,2 @@
 <? session_destroy(); ?>
-<? header('Location: '.$config[site][url].'/'); ?>
+<meta http-equiv="refresh" content="0;url=<?= $config[site][url] ?>/" />
