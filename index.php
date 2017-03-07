@@ -51,7 +51,8 @@ $log = new logger();
         <meta name="Author" content="Aaron Anderson"/>
         <meta name="Copyright" content="2009"/>
 
-        <!-- <link type="text/css" rel="stylesheet" title="Default" href="templates/<?= $config[site][template] ?>/screen.css" media="screen" />
+        <!-- 
+        <link type="text/css" rel="stylesheet" title="Default" href="templates/<?= $config[site][template] ?>/screen.css" media="screen" />
         <link type="text/css" rel="stylesheet" title="Mobile" href="templates/<?= $config[site][template] ?>/handheld.css" media="handheld" />
         -->
         <link rel='stylesheet' media='screen and (min-width: 1081px)' href='templates/<?= $config[site][template] ?>/screen.css' />
