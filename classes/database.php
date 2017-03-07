@@ -61,6 +61,21 @@ class database {
         }
     }
 
+// Prepared statements below here
+
+    function prepared_select_assoc(){
+        $mysqli = new mysqli($config[database][server],$config[database][dbuser],$config[database][dbpass],$config[database][db]);
+        if ($mysqli->connect_errno){
+            echo "Failed to connecto to MySqL: (" . $mysqli->connect_errno . ") " . $mysqli->connect_error;
+        }
+        $stmt = $mysqli->prepare($sql);
+        $stmt->execute();
+        $res = $stmt->get_result();
+        $row = $stmt->fetch_assoc();
+
+        return $row;
+    }
+
     function close() {
         mysql_close();
     }
