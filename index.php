@@ -1,20 +1,21 @@
-<?php
-//$currentTimeoutInSecs = ini_get(’session.gc_maxlifetime’);
-// Change the session timeout value to 30 minutes
-//ini_set(’session.gc_maxlifetime’, 60*60);
+
+<?
+/* $currentTimeoutInSecs = ini_get(’session.gc_maxlifetime’);
+   Change the session timeout value to 30 minutes
+  ini_set(’session.gc_maxlifetime’, 60*60); */
 session_start();
 //$currentTimeoutInSecs = ini_get(’session.gc_maxlifetime’);
-require('includes/config.php');
-require('includes/functions.php');
-require('classes/listings.php');
-require('classes/feedback.php');
-require('classes/items.php');
-require('classes/users.php');
-require('classes/swap.php');
-require('classes/news.php');
-require('classes/messages.php');
-require('classes/log.php');
-include_once("fckeditor/fckeditor.php");
+require 'includes/config.php';
+require 'includes/functions.php';
+require 'classes/listings.php';
+require 'classes/feedback.php';
+require 'classes/items.php';
+require 'classes/users.php';
+require 'classes/swap.php';
+require 'classes/news.php';
+require 'classes/messages.php';
+require 'classes/log.php';
+require_once "fckeditor/fckeditor.php";
 
 // Check if someone is accessing a subdomain and redirect to their store if so:
 $domain = explode('.', filter_input(INPUT_SERVER, 'HTTP_HOST'));
@@ -46,19 +47,19 @@ $log = new logger();
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
         <meta name="robots" content="index,follow"/>
-        <meta name="Keywords" content="<?= $config[site][keywords] ?>"/>
-        <meta name="Description" content="<?= $config[site][tagline] ?>"/>
+        <meta name="Keywords" content="<?php $config[site][keywords] ?>"/>
+        <meta name="Description" content="<?php $config[site][tagline] ?>"/>
         <meta name="Author" content="Aaron Anderson"/>
         <meta name="Copyright" content="2009"/>
 
         <!-- 
-        <link type="text/css" rel="stylesheet" title="Default" href="templates/<?= $config[site][template] ?>/screen.css" media="screen" />
-        <link type="text/css" rel="stylesheet" title="Mobile" href="templates/<?= $config[site][template] ?>/handheld.css" media="handheld" />
+        <link type="text/css" rel="stylesheet" title="Default" href="templates/<?php $config[site][template] ?>/screen.css" media="screen" />
+        <link type="text/css" rel="stylesheet" title="Mobile" href="templates/<?php $config[site][template] ?>/handheld.css" media="handheld" />
         -->
-        <link rel='stylesheet' media='screen and (min-width: 1081px)' href='templates/<?= $config[site][template] ?>/screen.css' />
-        <link rel='stylesheet' media='screen and (min-width: 300px) and (max-width: 1080px)' href='templates/<?= $config[site][template] ?>/handheld.css' />
+        <link rel='stylesheet' media='screen and (min-width: 1081px)' href='templates/<?php $config[site][template] ?>/screen.css' />
+        <link rel='stylesheet' media='screen and (min-width: 300px) and (max-width: 1080px)' href='templates/<?php $config[site][template] ?>/handheld.css' />
 
-        <title><?= $config[site][name] ?></title>
+        <title><?php $config[site][name] ?></title>
         <?php
         if (filter_input(INPUT_GET, 'cat', FILTER_VALIDATE_INT)) {
             $cat = filter_input(INPUT_GET, 'cat', FILTER_VALIDATE_INT);
@@ -77,8 +78,8 @@ $log = new logger();
             echo 'style="display:block"';
         }
         ?>
-             >Thank you for expressing your interest in <?= $config[site][name] ?>.  This site is still in beta.  We expect the site to be live on <?= $config[site][livedate] ?>.<br/>
-            For Information about this site, send an email to <a href="mailto:<?= $config[site][contact] ?>?subject=Question%20about%20<?= $config[site][short_name_enc] ?>"><?= $config[site][contact] ?></a> Current Timeout in Seconds: <?= $currentTimeoutInSecs; ?></div>
+             >Thank you for expressing your interest in <?php $config[site][name] ?>.  This site is still in beta.  We expect the site to be live on <?php $config[site][livedate] ?>.<br/>
+            For Information about this site, send an email to <a href="mailto:<?php $config[site][contact] ?>?subject=Question%20about%20<?php $config[site][short_name_enc] ?>"><?php $config[site][contact] ?></a> Current Timeout in Seconds: <?php $currentTimeoutInSecs; ?></div>
             <? include('templates/' . $config[site][template] . '/header.php'); ?>
         <!-- Begin Content -->
         <div id="content">
